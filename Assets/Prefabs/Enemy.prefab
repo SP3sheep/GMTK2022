@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3670242154775666276}
   - component: {fileID: 8981491806851478009}
   - component: {fileID: 6469358148446764125}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 1014281125, guid: 7faf2f10d5396ea46bb787a9976a48dd, type: 3}
+  m_Color: {r: 0.509434, g: 0.19464225, b: 0.2002635, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -102,7 +102,7 @@ MonoBehaviour:
   currentDie: 0
   damage: 0
   maxValue: 6
-  speed: 1
+  speed: 100
   sprites:
   - {fileID: 801782915, guid: 7faf2f10d5396ea46bb787a9976a48dd, type: 3}
   - {fileID: 1006719744, guid: 7faf2f10d5396ea46bb787a9976a48dd, type: 3}
@@ -110,6 +110,9 @@ MonoBehaviour:
   - {fileID: 1894928202, guid: 7faf2f10d5396ea46bb787a9976a48dd, type: 3}
   - {fileID: 1014281125, guid: 7faf2f10d5396ea46bb787a9976a48dd, type: 3}
   - {fileID: -266732823, guid: 7faf2f10d5396ea46bb787a9976a48dd, type: 3}
+  enemiesLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!61 &8981491806851478009
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -144,16 +147,16 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2550223044309743703}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 1
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
