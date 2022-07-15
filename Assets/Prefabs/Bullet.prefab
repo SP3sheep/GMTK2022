@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 8363754243045570610}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -99,8 +99,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75bbea0f92e71d44d84259ee61704ce8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  die: 5
+  speed: 2
+  die: 3
+  sprites:
+  - {fileID: 330368851, guid: dd5fee8e8e6d1614688da8f674b641b7, type: 3}
+  - {fileID: 806536315, guid: dd5fee8e8e6d1614688da8f674b641b7, type: 3}
+  - {fileID: 1808874749, guid: dd5fee8e8e6d1614688da8f674b641b7, type: 3}
+  - {fileID: 1212043325, guid: dd5fee8e8e6d1614688da8f674b641b7, type: 3}
+  - {fileID: 476098030, guid: dd5fee8e8e6d1614688da8f674b641b7, type: 3}
+  - {fileID: 2140592638, guid: dd5fee8e8e6d1614688da8f674b641b7, type: 3}
 --- !u!50 &-6995781013186870842
 Rigidbody2D:
   serializedVersion: 4
