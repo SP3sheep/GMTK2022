@@ -10,6 +10,7 @@ public class EnemyScript : MonoBehaviour
     public int maxValue;
 
     public float speed;
+    public Sprite[] sprites;
 
     GameObject player;
 
@@ -19,6 +20,8 @@ public class EnemyScript : MonoBehaviour
     {
         currentDie = Random.Range(1, maxValue);
         player = GameObject.FindGameObjectWithTag("Player");
+
+        gameObject.GetComponent<SpriteRenderer>().sprite = sprites[currentDie - 1];
     }
 
     // Update is called once per frame
@@ -34,6 +37,10 @@ public class EnemyScript : MonoBehaviour
 
         if (currentDie == 0) {
             Destroy(gameObject);
-    }
+        }
+        else
+        {
+            gameObject.GetComponent<SpriteRenderer>().sprite = sprites[currentDie - 1];
+        }
     }
 }
