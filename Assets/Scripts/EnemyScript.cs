@@ -24,11 +24,12 @@ public class EnemyScript : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
 
-        currentDie = Random.Range(1, maxValue);
+        currentDie = Random.Range(1, maxValue + 1);
         player = GameObject.FindGameObjectWithTag("Player");
 
         GetComponent<SpriteRenderer>().sprite = sprites[currentDie - 1];
         transform.localScale = new Vector3(currentDie / 2f, currentDie / 2f, 0);
+        damage = currentDie;
 
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
@@ -70,6 +71,7 @@ public class EnemyScript : MonoBehaviour
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = sprites[currentDie - 1];
             transform.localScale = new Vector3(currentDie / 2f, currentDie / 2f, 0);
+            damage = currentDie;
         }
     }
 }

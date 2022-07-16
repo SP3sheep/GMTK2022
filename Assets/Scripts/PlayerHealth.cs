@@ -28,11 +28,13 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.tag == "Enemy" && timeSinceLastHit > timeBetweenHits)
+
+        if (collision.gameObject.tag == "Enemy" && timeSinceLastHit > timeBetweenHits)
         {
-            currentHealth -= collision.GetComponent<EnemyScript>().damage;
+            Debug.Log("You Hit");
+            currentHealth -= collision.gameObject.GetComponent<EnemyScript>().damage;
             timeSinceLastHit = 0;
         }
     }

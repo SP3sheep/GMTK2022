@@ -35,8 +35,8 @@ public class InventoryHandler : MonoBehaviour
 
         currentlySelectedInt -= Mathf.RoundToInt(Input.mouseScrollDelta.y);
 
-        if (currentlySelectedInt < 0) currentlySelectedInt = 3;
-        if (currentlySelectedInt > 3) currentlySelectedInt = 0;
+        if (currentlySelectedInt < 0) currentlySelectedInt = 0;
+        if (currentlySelectedInt > 3) currentlySelectedInt = 3;
 
         currentlySelected = dicerollers[currentlySelectedInt];
 
