@@ -7,9 +7,9 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     public float dashForce;
     public float dashCooldown;
+    [HideInInspector] public float angle;
 
     float dashTimer;
-
     Rigidbody2D rb;
     Vector2 movementInput;
 
@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
         var mousePosition = Input.mousePosition;
         var objectScreenPosition = Camera.main.WorldToScreenPoint(transform.position);
         var direction = mousePosition - objectScreenPosition; // No need to normalize btw
-        var angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
+        angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
 
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, -angle));
     }
