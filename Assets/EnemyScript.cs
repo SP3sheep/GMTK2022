@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyScript : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class EnemyScript : MonoBehaviour
     public float speed;
     public Sprite[] sprites;
     public LayerMask enemiesLayer;
+
+    private NavMeshAgent agent;
 
     GameObject player;
     Rigidbody2D rb;
@@ -26,13 +29,24 @@ public class EnemyScript : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
 
         GetComponent<SpriteRenderer>().sprite = sprites[currentDie - 1];
+        transform.localScale = new Vector3(currentDie / 2f, currentDie / 2f, 0);
+
+        agent = GetComponent<NavMeshAgent>();
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
+    }
+
+    private void Update()
+    {
+        agent.SetDestination(player.transform.position);
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        /*
         // Move towards player
-        rb.AddForce((player.transform.position - transform.position).normalized * speed * Time.deltaTime);
+        rb.AddForce((player.transform.position - transform.position).normalized * speed/currentDie * Time.deltaTime);
 
         float distToPlayer = Vector2.Distance(transform.position, player.transform.position);
         if(distToPlayer > 1)
@@ -43,6 +57,7 @@ public class EnemyScript : MonoBehaviour
                 rb.AddForce((transform.position - e.transform.position).normalized * 2f);
             }
         }
+        */
     }
 
     public void TakeDamage()
@@ -55,6 +70,7 @@ public class EnemyScript : MonoBehaviour
         else
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = sprites[currentDie - 1];
+            transform.localScale = new Vector3(currentDie / 2f, currentDie / 2f, 0);
         }
     }
 }
