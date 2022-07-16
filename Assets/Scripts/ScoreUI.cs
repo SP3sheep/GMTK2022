@@ -10,8 +10,9 @@ public class ScoreUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        score = GameObject.FindGameObjectWithTag("SceneHandler").GetComponentInChildren<ScoreTracker>().score;
+        score = GameObject.FindGameObjectWithTag("SceneHandler").GetComponentInChildren<ScoreTracker>().score
+                + Mathf.Max(1000 - 10 * GameObject.FindGameObjectWithTag("SceneHandler").GetComponentInChildren<ScoreTracker>().timeSinceStart);
 
-        gameObject.GetComponent<TextMeshProUGUI>().SetText("Score: " + score.ToString() + " points");
+        gameObject.GetComponent<TextMeshProUGUI>().SetText("Score: " + ((int)score).ToString() + " points");
     }
 }

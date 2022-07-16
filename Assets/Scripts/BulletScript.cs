@@ -34,6 +34,7 @@ public class BulletScript : MonoBehaviour
                 // Correct dice hit
                 collider.gameObject.GetComponent<Rigidbody2D>().AddForce(transform.up * 10f, ForceMode2D.Impulse);
                 collider.gameObject.GetComponent<EnemyScript>().TakeDamage();
+                GameObject.FindGameObjectWithTag("SceneHandler").GetComponentInChildren<ScoreTracker>().Kill();
                 Debug.Log("correct hit");
             }
             else
