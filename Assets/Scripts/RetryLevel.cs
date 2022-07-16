@@ -9,4 +9,9 @@ public class RetryLevel : MonoBehaviour
     {
         SceneManager.LoadScene(GameObject.FindGameObjectWithTag("SceneHandler").GetComponent<SceneLoader>().lastCompletedScene);
     }
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene("Main Scene");
+    }
+
 }
