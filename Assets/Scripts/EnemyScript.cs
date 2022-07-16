@@ -12,8 +12,11 @@ public class EnemyScript : MonoBehaviour
     public float speed;
     public Sprite[] sprites;
     public LayerMask enemiesLayer;
+    public LayerMask wallsLayer;
 
     private NavMeshAgent agent;
+    Vector3 target;
+    Vector3 targetLastSeen;
 
     GameObject player;
     Rigidbody2D rb;
@@ -28,17 +31,44 @@ public class EnemyScript : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
 
         GetComponent<SpriteRenderer>().sprite = sprites[currentDie - 1];
-        transform.localScale = new Vector3(currentDie / 2f, currentDie / 2f, 0);
+        transform.localScale = new Vector3(0.5f + currentDie / 3f, 0.5f + currentDie / 3f, 0);
         damage = currentDie;
 
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+
+        targetLastSeen = transform.position;
     }
 
     private void Update()
     {
-        agent.SetDestination(player.transform.position);
+        RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, player.transform.position - transform.position,
+                                                    Vector2.Distance(player.transform.position, transform.position), wallsLayer);
+        
+        //Debug.DrawRay(transform.position, (player.transform.position - transform.position));
+
+        if (hits.Length == 0)
+        {
+            target = player.transform.position;
+            targetLastSeen = target;
+            Debug.DrawLine(transform.position, targetLastSeen);
+        }
+        else
+        {
+            Debug.DrawLine(transform.position, targetLastSeen);
+        }
+
+        agent.SetDestination(targetLastSeen);
+
+        if (agent.remainingDistance < 0.1f)
+        {
+            agent.isStopped = true;
+        }
+        else
+        {
+            agent.isStopped = false;
+        }
     }
 
     // Update is called once per frame
@@ -70,7 +100,7 @@ public class EnemyScript : MonoBehaviour
         else
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = sprites[currentDie - 1];
-            transform.localScale = new Vector3(currentDie / 2f, currentDie / 2f, 0);
+            transform.localScale = new Vector3(0.5f + currentDie / 3f, 0.5f + currentDie / 3f, 0);
             damage = currentDie;
         }
     }
