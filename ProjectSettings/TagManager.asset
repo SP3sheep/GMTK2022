@@ -18,7 +18,7 @@ TagManager:
   - UI
   - Enemies
   - Walls
-  - 
+  - Darkness
   - 
   - 
   - 
@@ -45,4 +45,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Darkness
+    uniqueID: 1974113001
     locked: 0
