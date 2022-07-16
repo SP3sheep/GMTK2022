@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     public float dashForce;
     public float dashCooldown;
+    public DashTrail dashTrailScript;
     [HideInInspector] public float angle;
 
     float dashTimer;
@@ -30,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
 
         dashTimer += Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.Space) && dashTimer >= dashCooldown) Dash();
+        if(dashTimer > 0.2) dashTrailScript.SetEnabled(false);
     }
     private void FixedUpdate()
     {
@@ -40,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.AddForce(rb.velocity.normalized * dashForce);
         dashTimer = 0;
+        dashTrailScript.SetEnabled(true);
     }
 
     void RotateTowardsMouse()
