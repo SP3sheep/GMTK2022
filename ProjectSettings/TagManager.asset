@@ -8,6 +8,7 @@ TagManager:
   - Bullet
   - DiceScroller
   - InventoryHandler
+  - SceneHandler
   layers:
   - Default
   - TransparentFX
