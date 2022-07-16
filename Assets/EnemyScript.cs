@@ -5,7 +5,6 @@ using UnityEngine.AI;
 
 public class EnemyScript : MonoBehaviour
 {
-
     public int currentDie;
     public int damage;
     public int maxValue;

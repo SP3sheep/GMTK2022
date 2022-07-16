@@ -24,7 +24,6 @@ public class PlayerMovement : MonoBehaviour
     {
         
         movementInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
-        Debug.Log(speed);
         // transform.LookAt(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.up);
 
         RotateTowardsMouse();

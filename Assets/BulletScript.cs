@@ -9,10 +9,13 @@ public class BulletScript : MonoBehaviour
     public int die;
     public Sprite[] sprites;
 
+    InventoryHandler inventory;
+
     // Start is called before the first frame update
     void Start()
     {
-        die = GameObject.FindGameObjectWithTag("DiceScroller").GetComponent<DiceScroller>().value + 1;
+        inventory = GameObject.FindGameObjectWithTag("InventoryHandler").GetComponent<InventoryHandler>();
+        die = inventory.currentlySelected.value + 1;
         gameObject.GetComponent<SpriteRenderer>().sprite = sprites[die - 1];
     }
 
