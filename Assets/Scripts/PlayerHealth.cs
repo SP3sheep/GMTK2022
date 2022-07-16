@@ -33,7 +33,9 @@ public class PlayerHealth : MonoBehaviour
 
         if (collision.gameObject.tag == "Enemy" && timeSinceLastHit > timeBetweenHits)
         {
-            Debug.Log("You Hit");
+            Debug.Log("You got hit");
+            GetComponent<Rigidbody2D>().AddForce((collision.transform.position - transform.position) * -400f);
+            collision.gameObject.GetComponent<Rigidbody2D>().AddForce((collision.transform.position - transform.position) * 200f);
             currentHealth -= collision.gameObject.GetComponent<EnemyScript>().damage;
             timeSinceLastHit = 0;
         }
