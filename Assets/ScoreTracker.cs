@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ScoreTracker : MonoBehaviour
 {
@@ -18,6 +19,24 @@ public class ScoreTracker : MonoBehaviour
         if (GameObject.FindGameObjectsWithTag("Enemy").Length > 0 && GameObject.FindGameObjectsWithTag("Player").Length == 1)
         {
             score -= Time.deltaTime;
+        }
+    }
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += resetScore;
+    }
+
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= resetScore;
+    }
+
+    void resetScore(Scene scene, LoadSceneMode mode)
+    {
+        if (GameObject.FindGameObjectsWithTag("Enemy").Length > 0 && GameObject.FindGameObjectsWithTag("Player").Length == 1)
+        {
+            score = 1000;
         }
     }
 }

@@ -9,6 +9,10 @@ public class SceneLoader : MonoBehaviour
 
     private void Start()
     {
+        if (GameObject.FindGameObjectsWithTag("SceneHandler").Length > 1)
+        {
+            Destroy(gameObject);
+        }
         DontDestroyOnLoad(gameObject);
     }
     // Update is called once per frame

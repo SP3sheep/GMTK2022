@@ -14,7 +14,7 @@ public class NextLevelMenu : MonoBehaviour
 
     public void LoadMainMenu()
     {
-        SceneManager.LoadScene("Main Menu");
+        SceneManager.LoadScene("Main Scene");
     }
 
     public void LoadNextLevel()
