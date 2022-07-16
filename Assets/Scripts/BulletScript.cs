@@ -27,9 +27,21 @@ public class BulletScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.tag == "Enemy" && collider.gameObject.GetComponent<EnemyScript>().currentDie == die)
+        if (collider.gameObject.tag == "Enemy")
         {
-            collider.gameObject.GetComponent<EnemyScript>().TakeDamage();
+            if(collider.gameObject.GetComponent<EnemyScript>().currentDie == die)
+            {
+                // Correct dice hit
+                collider.gameObject.GetComponent<Rigidbody2D>().AddForce(transform.up * 10f, ForceMode2D.Impulse);
+                collider.gameObject.GetComponent<EnemyScript>().TakeDamage();
+                Debug.Log("correct hit");
+            }
+            else
+            {
+                // Incorrect dice hit
+                collider.gameObject.GetComponent<Rigidbody2D>().AddForce((GameObject.FindGameObjectWithTag("Player").transform.position - collider.transform.position) * 1f, ForceMode2D.Impulse);
+                Debug.Log("incorrect hit");
+            }
         }
 
         if (collider.gameObject.tag != "Bullet" && collider.gameObject.tag != "Player")
