@@ -4,22 +4,43 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
-
     public float speed;
+    public float dashForce;
+    public float dashCooldown;
+
+    float dashTimer;
+
+    Rigidbody2D rb;
+    Vector2 movementInput;
+
     void Start()
     {
-        
-    }
+        rb = GetComponent<Rigidbody2D>();
 
-    // Update is called once per frame
+        dashTimer = dashCooldown;
+    }
+    
     void Update()
     {
-        transform.position += new Vector3(Input.GetAxis("Horizontal") * speed * Time.deltaTime, Input.GetAxis("Vertical") * speed * Time.deltaTime, 0);
-
+        
+        movementInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
+        Debug.Log(speed);
         // transform.LookAt(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.up);
 
         RotateTowardsMouse();
+
+        dashTimer += Time.deltaTime;
+        if (Input.GetKeyDown(KeyCode.Space) && dashTimer >= dashCooldown) Dash();
+    }
+    private void FixedUpdate()
+    {
+        rb.AddForce(movementInput * speed);
+    }
+
+    void Dash()
+    {
+        rb.AddForce(rb.velocity.normalized * dashForce);
+        dashTimer = 0;
     }
 
     void RotateTowardsMouse()

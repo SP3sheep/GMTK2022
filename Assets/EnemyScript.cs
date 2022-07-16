@@ -35,7 +35,7 @@ public class EnemyScript : MonoBehaviour
         rb.AddForce((player.transform.position - transform.position).normalized * speed * Time.deltaTime);
 
         float distToPlayer = Vector2.Distance(transform.position, player.transform.position);
-        if(distToPlayer > 1)
+        if(distToPlayer > 2)
         {
             Collider2D[] nearbyEnemies = Physics2D.OverlapCircleAll(transform.position, 1, enemiesLayer);
             foreach (Collider2D e in nearbyEnemies)
