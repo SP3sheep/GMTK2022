@@ -7,12 +7,20 @@ public class SceneLoader : MonoBehaviour
 {
     public int lastCompletedScene;
 
+    public static SceneLoader instance;
+
     private void Start()
     {
-        if (GameObject.FindGameObjectsWithTag("SceneHandler").Length > 1)
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
         {
             Destroy(gameObject);
+            return;
         }
+
         DontDestroyOnLoad(gameObject);
     }
     // Update is called once per frame
