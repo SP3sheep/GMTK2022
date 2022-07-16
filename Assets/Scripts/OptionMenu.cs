@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class OptionMenu : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class OptionMenu : MonoBehaviour
     {
         mainVolumeSlider.value = GameObject.FindGameObjectWithTag("SceneHandler").GetComponentInChildren<Options>().mainVolume;
         musicVolumeSlider.value = GameObject.FindGameObjectWithTag("SceneHandler").GetComponentInChildren<Options>().musicVolume;
+
+        FindObjectOfType<AudioManager>().SetVolume(mainVolumeSlider.value);
+        FindObjectOfType<AudioManager>().SetVolume(mainVolumeSlider.value * musicVolumeSlider.value, "Music");
     }
 
     public void LoadMainMenu()
@@ -23,10 +27,12 @@ public class OptionMenu : MonoBehaviour
     public void UpdateMainVolume()
     {
         GameObject.FindGameObjectWithTag("SceneHandler").GetComponentInChildren<Options>().mainVolume = mainVolumeSlider.value;
+        FindObjectOfType<AudioManager>().SetVolume(mainVolumeSlider.value);
     }
 
     public void UpdateMusicVolume()
     {
         GameObject.FindGameObjectWithTag("SceneHandler").GetComponentInChildren<Options>().musicVolume = musicVolumeSlider.value;
+        FindObjectOfType<AudioManager>().SetVolume(mainVolumeSlider.value * musicVolumeSlider.value, "Music");
     }
 }
