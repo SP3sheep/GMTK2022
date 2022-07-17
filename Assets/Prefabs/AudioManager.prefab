@@ -105,4 +105,10 @@ MonoBehaviour:
     pitch: 0.96
     loop: 0
     source: {fileID: 0}
-  updatesValues: 1
+  - name: ButtonClick
+    clip: {fileID: 8300000, guid: 8e3623c52c460794cbdf0c6f7b694c9f, type: 3}
+    volume: 0.807
+    pitch: 0.96
+    loop: 0
+    source: {fileID: 0}
+  updatesValues: 0

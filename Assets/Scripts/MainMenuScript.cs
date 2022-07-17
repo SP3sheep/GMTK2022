@@ -25,16 +25,19 @@ public class MainMenuScript : MonoBehaviour
 
     public void LoadOptions()
     {
+        FindObjectOfType<AudioManager>().Play("ButtonClick");
         SceneManager.LoadScene("Options Scene");
     }
 
     public void LoadCredits()
     {
+        FindObjectOfType<AudioManager>().Play("ButtonClick");
         SceneManager.LoadScene("Credits Scene");
     }
 
     public void QuitGame()
     {
+        FindObjectOfType<AudioManager>().Play("ButtonClick");
         Application.Quit();
     }
 }

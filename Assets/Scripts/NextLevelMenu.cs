@@ -28,16 +28,19 @@ public class NextLevelMenu : MonoBehaviour
 
     public void LoadMainMenu()
     {
+        FindObjectOfType<AudioManager>().Play("ButtonClick");
         SceneManager.LoadScene("Main Scene");
     }
 
     public void LoadNextLevel()
     {
+        FindObjectOfType<AudioManager>().Play("ButtonClick");
         SceneManager.LoadScene(sceneLoader.lastCompletedScene + 1);
     }
 
     public void LoadCreditsMenu()
     {
+        FindObjectOfType<AudioManager>().Play("ButtonClick");
         SceneManager.LoadScene("Credits Scene");
     }
 }

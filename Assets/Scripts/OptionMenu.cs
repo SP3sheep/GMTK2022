@@ -21,6 +21,7 @@ public class OptionMenu : MonoBehaviour
 
     public void LoadMainMenu()
     {
+        FindObjectOfType<AudioManager>().Play("ButtonClick");
         SceneManager.LoadScene("Main Scene");
     }
 
