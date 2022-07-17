@@ -5889,6 +5889,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2045354742384956149, guid: c17a76559c179544cb9551e5df9df7f9, type: 3}
+      propertyPath: multiKillThreshold
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c17a76559c179544cb9551e5df9df7f9, type: 3}
 --- !u!1001 &1790156332
