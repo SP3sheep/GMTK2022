@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    public GameObject player;
+    GameObject player;
 
     int playerCurrentHealth;
     int playerMaxHealth;
@@ -18,6 +18,8 @@ public class HealthBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+
         playerCurrentHealth = player.GetComponent<PlayerHealth>().currentHealth;
         playerMaxHealth = player.GetComponent<PlayerHealth>().maxHealth;
 
@@ -31,6 +33,8 @@ public class HealthBar : MonoBehaviour
     {
         playerCurrentHealth = player.GetComponent<PlayerHealth>().currentHealth;
         GetComponent<Slider>().value = playerCurrentHealth;
+
+        Debug.Log(playerCurrentHealth);
     }
 
     String ConvertToBase(int numberToConvert, int baseToConvertTo)
