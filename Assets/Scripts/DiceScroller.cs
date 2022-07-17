@@ -22,6 +22,7 @@ public class DiceScroller : MonoBehaviour
     
     void Update()
     {
+        transform.rotation = Quaternion.Euler(new Vector3(0,0, Mathf.Clamp((timer - (rollRate * 0.95f))*900, 0, 360)));
 
         timer += Time.deltaTime;
         if(timer >= rollRate)
