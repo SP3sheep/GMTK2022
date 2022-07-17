@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Menus/Options Scene.unity
     guid: 06d655215cf2b834dbd20af2fd17efde
   - enabled: 1
+    path: Assets/Scenes/Menus/Retry Scene.unity
+    guid: ba6eb16b7cfb5ec4f827d910c93158a0
+  - enabled: 1
     path: Assets/Scenes/Scene 2.unity
     guid: 81549987b241b294cbd43798692b67fa
   - enabled: 1

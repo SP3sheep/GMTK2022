@@ -70,7 +70,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 8363754243045570610, guid: 0e5f409b5a26d3b40bc2aea38657d6e6, type: 3}
-  rechargeTime: 0.75
+  rechargeTime: 0
 --- !u!114 &6380976118707827073
 MonoBehaviour:
   m_ObjectHideFlags: 0

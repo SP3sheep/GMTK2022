@@ -15,6 +15,9 @@ public class DiceScroller : MonoBehaviour
     void Start()
     {
         image = GetComponent<Image>();
+        value = Random.Range(0, 6);
+        image.sprite = sprites[value];
+        timer = 0;
     }
     
     void Update()
@@ -23,6 +26,8 @@ public class DiceScroller : MonoBehaviour
         timer += Time.deltaTime;
         if(timer >= rollRate)
         {
+            GetComponentInParent<InventoryHandler>().availableDice = new bool[] { true, true, true, true };
+
             value = Random.Range(0, 6);
             image.sprite = sprites[value];
             timer = 0;

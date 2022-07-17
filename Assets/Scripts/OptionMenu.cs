@@ -28,6 +28,7 @@ public class OptionMenu : MonoBehaviour
     {
         GameObject.FindGameObjectWithTag("SceneHandler").GetComponentInChildren<Options>().mainVolume = mainVolumeSlider.value;
         FindObjectOfType<AudioManager>().SetVolume(mainVolumeSlider.value);
+        FindObjectOfType<AudioManager>().SetVolume(mainVolumeSlider.value * musicVolumeSlider.value, "Music");
     }
 
     public void UpdateMusicVolume()
