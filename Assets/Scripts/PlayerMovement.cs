@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public DashTrail dashTrailScript;
     [HideInInspector] public float angle;
 
-    float dashTimer;
+    public float dashTimer;
     Rigidbody2D rb;
     Vector2 movementInput;
 
