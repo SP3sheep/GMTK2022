@@ -44,6 +44,7 @@ public class BulletScript : MonoBehaviour
 
         if (collider.gameObject.tag != "Bullet" && collider.gameObject.tag != "Player")
         {
+            FindObjectOfType<AudioManager>().Play("DiceHitWall");
             Destroy(gameObject);
         }
     }

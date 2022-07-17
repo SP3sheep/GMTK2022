@@ -106,14 +106,20 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: ButtonClick
-    clip: {fileID: 8300000, guid: 8e3623c52c460794cbdf0c6f7b694c9f, type: 3}
-    volume: 0.807
-    pitch: 0.96
+    clip: {fileID: 8300000, guid: 672d2ca48cbf76c47ac4c0d8e3c02245, type: 3}
+    volume: 0.599
+    pitch: 1.46
     loop: 0
     source: {fileID: 0}
   - name: StreakPlonk
     clip: {fileID: 8300000, guid: 1cda2aac1a273414a8c005c686eecce1, type: 3}
     volume: 0.416
+    pitch: 0.75
+    loop: 0
+    source: {fileID: 0}
+  - name: DiceHitWall
+    clip: {fileID: 8300000, guid: 9f62c9724a0fb0d49ba3ae44e29243f1, type: 3}
+    volume: 0.743
     pitch: 0.75
     loop: 0
     source: {fileID: 0}
