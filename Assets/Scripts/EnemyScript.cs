@@ -14,6 +14,8 @@ public class EnemyScript : MonoBehaviour
     public LayerMask enemiesLayer;
     public LayerMask wallsLayer;
 
+    public bool randomStartValue = true;
+
     private NavMeshAgent agent;
     Vector3 target;
     Vector3 targetLastSeen;
@@ -27,7 +29,7 @@ public class EnemyScript : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
 
-        currentDie = Random.Range(1, maxValue + 1);
+        if(randomStartValue) currentDie = Random.Range(1, maxValue + 1);
         player = GameObject.FindGameObjectWithTag("Player");
 
         GetComponent<SpriteRenderer>().sprite = sprites[currentDie - 1];

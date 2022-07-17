@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8981491806851478009}
   - component: {fileID: 6469358148446764125}
   - component: {fileID: -8779556196063446483}
+  - component: {fileID: -3069810869406424857}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Enemy
@@ -186,3 +187,22 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &-3069810869406424857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2550223044309743703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06ac112a53c729a42ba161f7ad682b20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color1: {r: 0.7372549, g: 0.09411764, b: 0.27281496, a: 1}
+  color2: {r: 0.7372549, g: 0.09411765, b: 0.09411765, a: 1}
+  color3: {r: 0.7176471, g: 0.35112485, b: 0.07843135, a: 1}
+  color4: {r: 0.77254903, g: 0.61960787, b: 0, a: 1}
+  color5: {r: 0.77254903, g: 0.78431374, b: 0, a: 1}
+  color6: {r: 0.6056999, g: 0.78431374, b: 0, a: 1}
+  enemyDie: {fileID: 2550223044309743703}
