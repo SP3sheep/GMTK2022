@@ -16,7 +16,11 @@ public class PlayerSpriteScript : MonoBehaviour
     
     void Update()
     {
-        transform.rotation = Quaternion.identity;
+        if (parent.GetComponent<Rigidbody2D>().velocity.magnitude > 0.5)
+        {
+            transform.rotation = Quaternion.identity * Quaternion.Euler(0, 0, Mathf.Sin(Time.time * 12) * 3f);
+        }
+        else transform.rotation = Quaternion.identity;
 
         float angle = -parent.GetComponent<PlayerMovement>().angle + 180;
         angle = angle / 45;
