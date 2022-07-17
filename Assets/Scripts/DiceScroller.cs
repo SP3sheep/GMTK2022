@@ -7,7 +7,7 @@ public class DiceScroller : MonoBehaviour
 {
     public float rollRate = 1;
     public Sprite[] sprites;
-    [HideInInspector] public int value;
+    public int value;
 
     float timer;
     Image image;

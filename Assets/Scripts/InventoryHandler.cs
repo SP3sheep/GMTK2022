@@ -12,6 +12,7 @@ public class InventoryHandler : MonoBehaviour
     public DiceScroller currentlySelected;
     public int currentlySelectedInt;
     public Image selectedBorder;
+    public int currentlySelectedValue;
 
     public bool[] availableDice;
 
@@ -68,5 +69,7 @@ public class InventoryHandler : MonoBehaviour
                 selectedBorder.transform.position = currentlySelected.transform.position;
             }
         }
+
+        currentlySelectedValue = currentlySelected.value;
     }
 }
