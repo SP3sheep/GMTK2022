@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using UnityEngine.SceneManagement;
 
 public class ScoreTracker : MonoBehaviour
@@ -13,6 +14,8 @@ public class ScoreTracker : MonoBehaviour
     public float timeSinceLastKill;
     public float multiKillThreshold;
     public int currentStreak;
+
+    public GameObject ScoreTextPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -58,21 +61,37 @@ public class ScoreTracker : MonoBehaviour
         }
     }
 
-    public void Kill()
+    public void Kill(Vector2 positionOfKill)
     {
-        score += 75;
+        float scoreForKill = 0;
+
+        scoreForKill += 75;
 
         if (timeSinceLastKill < multiKillThreshold)
         {
-            score += 50;
             currentStreak++;
+            scoreForKill += 50 * currentStreak;
 
             if (currentStreak % 5 == -1)
             {
-                score += 200;
+                scoreForKill += 200;
             }
         }
 
         timeSinceLastKill = 0;
+
+        GameObject scoreText = Instantiate(ScoreTextPrefab, positionOfKill, Quaternion.identity, parent: transform);
+        string scoreString = scoreForKill.ToString();
+
+        if (currentStreak > 2)
+        {
+            scoreString += "\n streak: " + currentStreak.ToString();
+        }
+
+        scoreText.GetComponent<TextMesh>().text = scoreString;
+
+        score += scoreForKill;
     }
+
+    
 }

@@ -138,3 +138,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
+  timeSinceStart: 0
+  hitsOnRoll: 0
+  timeSinceLastKill: 0
+  multiKillThreshold: 5
+  currentStreak: 0
+  ScoreTextPrefab: {fileID: 256423362871592102, guid: ccbee5bb7d5d45f40941a2daa84729f5, type: 3}
