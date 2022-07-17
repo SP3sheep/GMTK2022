@@ -81,6 +81,18 @@ MonoBehaviour:
     pitch: 0.96
     loop: 0
     source: {fileID: 0}
+  - name: DashGrunt
+    clip: {fileID: 8300000, guid: d8bdb2c09b6dd7447be05912c5139788, type: 3}
+    volume: 0.4
+    pitch: 0.96
+    loop: 0
+    source: {fileID: 0}
+  - name: DashSwoosh
+    clip: {fileID: 8300000, guid: f5d4d79f4a75da045904789c0022da7d, type: 3}
+    volume: 1
+    pitch: 0.96
+    loop: 0
+    source: {fileID: 0}
   - name: Walking
     clip: {fileID: 8300000, guid: 91cb04481f0762e488aef6193e2e3ee3, type: 3}
     volume: 0.75

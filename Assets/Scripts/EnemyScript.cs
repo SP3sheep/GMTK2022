@@ -102,6 +102,8 @@ public class EnemyScript : MonoBehaviour
             gameObject.GetComponent<SpriteRenderer>().sprite = sprites[currentDie - 1];
             transform.localScale = new Vector3(0.5f + currentDie / 3f, 0.5f + currentDie / 3f, 0);
             damage = currentDie;
+
+            FindObjectOfType<AudioManager>().Play("DiceEnemyHit");
         }
     }
 }

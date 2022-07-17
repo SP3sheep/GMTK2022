@@ -43,6 +43,9 @@ public class PlayerMovement : MonoBehaviour
         rb.AddForce(rb.velocity.normalized * dashForce);
         dashTimer = 0;
         dashTrailScript.SetEnabled(true);
+
+        FindObjectOfType<AudioManager>().Play("DashGrunt");
+        FindObjectOfType<AudioManager>().Play("DashSwoosh");
     }
 
     void RotateTowardsMouse()

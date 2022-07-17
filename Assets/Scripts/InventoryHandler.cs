@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,7 +10,10 @@ public class InventoryHandler : MonoBehaviour
     public float rollrate;
 
     public DiceScroller currentlySelected;
-    private int currentlySelectedInt;
+    public int currentlySelectedInt;
+    public Image selectedBorder;
+
+    public bool[] availableDice;
 
     public float mouseScroll = 0;
 
@@ -22,6 +26,8 @@ public class InventoryHandler : MonoBehaviour
         {
             dicerollers[i].rollRate = rollrate;
         }
+
+        availableDice = new bool[] { true, true, true, true };
     }
 
     // Update is called once per frame
@@ -40,19 +46,26 @@ public class InventoryHandler : MonoBehaviour
 
         currentlySelected = dicerollers[currentlySelectedInt];
 
-        foreach (DiceScroller diceroller in dicerollers)
+        for (int i = 0; i < dicerollers.Length; i++)
         {
-            if (diceroller != currentlySelected)
+            DiceScroller diceroller = dicerollers[i];
+
+            if (!availableDice[i])
             {
                 diceroller.GetComponent<Image>().color = new Color(diceroller.GetComponent<Image>().color.r,
                                                                    diceroller.GetComponent<Image>().color.b,
-                                                                   diceroller.GetComponent<Image>().color.g, 0.5f);
+                                                                   diceroller.GetComponent<Image>().color.g, 0.25f);
             }
             else
             {
                 diceroller.GetComponent<Image>().color = new Color(diceroller.GetComponent<Image>().color.r,
                                                                    diceroller.GetComponent<Image>().color.b,
                                                                    diceroller.GetComponent<Image>().color.g, 1);
+            }
+
+            if (i == currentlySelectedInt)
+            {
+                selectedBorder.transform.position = currentlySelected.transform.position;
             }
         }
     }

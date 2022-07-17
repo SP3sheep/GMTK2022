@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -24,7 +25,7 @@ public class PlayerHealth : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            Debug.Log("You Lose");
+            SceneManager.LoadScene("Retry Scene");
         }
     }
 
@@ -33,10 +34,12 @@ public class PlayerHealth : MonoBehaviour
 
         if (collision.gameObject.tag == "Enemy" && timeSinceLastHit > timeBetweenHits)
         {
-            Debug.Log("You got hit");
             GetComponent<Rigidbody2D>().AddForce((collision.transform.position - transform.position) * -400f);
             collision.gameObject.GetComponent<Rigidbody2D>().AddForce((collision.transform.position - transform.position) * 200f);
             currentHealth -= collision.gameObject.GetComponent<EnemyScript>().damage;
+
+            FindObjectOfType<AudioManager>().Play("TakeDamage");
+
             timeSinceLastHit = 0;
         }
     }
