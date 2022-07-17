@@ -627,7 +627,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3670242154775666276, guid: 82d1a54ac8e53864ab24ed76458c9f85, type: 3}
       propertyPath: currentDie
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3670242154775666276, guid: 82d1a54ac8e53864ab24ed76458c9f85, type: 3}
       propertyPath: randomStartValue
@@ -749,7 +749,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3670242154775666276, guid: 82d1a54ac8e53864ab24ed76458c9f85, type: 3}
       propertyPath: currentDie
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3670242154775666276, guid: 82d1a54ac8e53864ab24ed76458c9f85, type: 3}
       propertyPath: randomStartValue
@@ -2625,7 +2625,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3670242154775666276, guid: 82d1a54ac8e53864ab24ed76458c9f85, type: 3}
       propertyPath: currentDie
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3670242154775666276, guid: 82d1a54ac8e53864ab24ed76458c9f85, type: 3}
       propertyPath: randomStartValue
