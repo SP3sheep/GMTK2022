@@ -50,3 +50,6 @@ TagManager:
   - name: Darkness
     uniqueID: 1974113001
     locked: 0
+  - name: Text
+    uniqueID: 1847496537
+    locked: 0

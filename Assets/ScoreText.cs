@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class ScoreText : MonoBehaviour
 {
@@ -22,7 +23,8 @@ public class ScoreText : MonoBehaviour
         transform.localScale += new Vector3(scaleSpeed * Time.deltaTime, scaleSpeed * Time.deltaTime, 0);
         // GetComponent<TextMesh>().fontSize += (int) (scaleSpeed * Time.deltaTime);
 
-        GetComponent<TextMesh>().color -= new Color ( 0, 0, 0, 1) * Time.deltaTime;
+        GetComponentInChildren<TextMeshPro>().color -= new Color ( 0, 0, 0, 1) * Time.deltaTime;
+        GetComponentInChildren<TextMeshPro>().sortingLayerID = SortingLayer.NameToID("Text");
 
         duration -= Time.deltaTime;
 

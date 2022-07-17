@@ -81,14 +81,14 @@ public class ScoreTracker : MonoBehaviour
         timeSinceLastKill = 0;
 
         GameObject scoreText = Instantiate(ScoreTextPrefab, positionOfKill, Quaternion.identity, parent: transform);
-        string scoreString = scoreForKill.ToString();
+        string scoreString = "+ " + scoreForKill.ToString();
 
         if (currentStreak > 2)
         {
-            scoreString += "\n streak: " + currentStreak.ToString();
+            scoreString += "\n streak X " + currentStreak.ToString();
         }
 
-        scoreText.GetComponent<TextMesh>().text = scoreString;
+        scoreText.GetComponentInChildren<TextMeshPro>().text = scoreString;
 
         score += scoreForKill;
     }
