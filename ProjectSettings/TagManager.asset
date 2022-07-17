@@ -9,6 +9,7 @@ TagManager:
   - DiceScroller
   - InventoryHandler
   - SceneHandler
+  - HealthBarDice
   layers:
   - Default
   - TransparentFX
