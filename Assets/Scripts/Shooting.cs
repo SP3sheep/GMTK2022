@@ -27,15 +27,13 @@ public class Shooting : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && cooldown > rechargeTime && inventory.availableDice[inventory.currentlySelectedInt])
         {
 
-            Instantiate(bullet, transform.position, transform.rotation);
-            bullet.GetComponent<BulletScript>().die = inventory.currentlySelected.value + 1;
+            GameObject bullet_b = Instantiate(bullet, transform.position, transform.rotation);
+            bullet_b.GetComponent<BulletScript>().die = inventory.currentlySelected.value + 1;
             inventory.availableDice[inventory.currentlySelectedInt] = false;
 
             cooldown = 0;
 
             FindObjectOfType<AudioManager>().Play("DiceRoll");
-
-
         }
     }
 }
