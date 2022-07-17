@@ -33,7 +33,7 @@ public class Shooting : MonoBehaviour
 
             cooldown = 0;
 
-            FindObjectOfType<AudioManager>().Play("DiceRoll");
+            FindObjectOfType<AudioManager>().Play("ThrowSound");
         }
     }
 }

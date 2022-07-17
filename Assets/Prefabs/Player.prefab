@@ -84,7 +84,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
-  maxHealth: 25
+  maxHealth: 30
   timeBetweenHits: 2
 --- !u!50 &7365091259083700828
 Rigidbody2D:

@@ -32,6 +32,19 @@ public class PlayerMovement : MonoBehaviour
         dashTimer += Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.Space) && dashTimer >= dashCooldown) Dash();
         if(dashTimer > 0.2) dashTrailScript.SetEnabled(false);
+
+
+        if (rb.velocity.magnitude > 0.5f)
+        {
+            if (!FindObjectOfType<AudioManager>().FindSource("Walking").source.isPlaying)
+            {
+                FindObjectOfType<AudioManager>().Play("Walking");
+            }
+        }
+        else
+        {
+            FindObjectOfType<AudioManager>().Stop("Walking");
+        }
     }
     private void FixedUpdate()
     {

@@ -38,9 +38,10 @@ public class PlayerHealth : MonoBehaviour
             collision.gameObject.GetComponent<Rigidbody2D>().AddForce((collision.transform.position - transform.position) * 200f);
             currentHealth -= collision.gameObject.GetComponent<EnemyScript>().damage;
 
-            FindObjectOfType<AudioManager>().Play("TakeDamage");
-
             timeSinceLastHit = 0;
+
+            FindObjectOfType<AudioManager>().Play("TakeDamage");
+            //FindObjectOfType<HealthBar>().UpdateHealth();
         }
     }
 }
