@@ -110,7 +110,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: 0, y: -0.0000043511}
+  m_AnchoredPosition: {x: 0, y: -0.0000042915344}
   m_SizeDelta: {x: 0, y: 6.0057}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &6696476038241573444
@@ -1108,7 +1108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 834f3b64c1b086d4b877fd2478cfc503, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 175851312836769707, guid: 276bb552e1ceef34fbb4a8bef800e62b, type: 3}
   offset: 0
   healthDicePrefab: {fileID: 0}
   sprites: []
