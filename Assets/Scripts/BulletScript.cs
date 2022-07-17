@@ -37,6 +37,7 @@ public class BulletScript : MonoBehaviour
             {
                 // Incorrect dice hit
                 collider.gameObject.GetComponent<Rigidbody2D>().AddForce((GameObject.FindGameObjectWithTag("Player").transform.position - collider.transform.position) * 1f, ForceMode2D.Impulse);
+                FindObjectOfType<AudioManager>().Play("IncorrectHit");
                 Debug.Log("incorrect hit");
             }
         }

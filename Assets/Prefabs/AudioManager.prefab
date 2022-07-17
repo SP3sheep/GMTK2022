@@ -51,12 +51,6 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     source: {fileID: 0}
-  - name: ExtendedDiceRoll
-    clip: {fileID: 8300000, guid: e86e64a888a340942ad907a668eb2b0a, type: 3}
-    volume: 0.75
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
   - name: TakeDamage
     clip: {fileID: 8300000, guid: b41b1b3659d80ed4d8b6a4d661741d7b, type: 3}
     volume: 0.75
@@ -100,9 +94,15 @@ MonoBehaviour:
     loop: 1
     source: {fileID: 0}
   - name: ThrowDice
-    clip: {fileID: 8300000, guid: 864cb668599711d4cbcc0591b45bf008, type: 3}
-    volume: 0.75
+    clip: {fileID: 8300000, guid: e64a3c34181cdb349a2bd30dc2028304, type: 3}
+    volume: 1
     pitch: 0.96
-    loop: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: IncorrectHit
+    clip: {fileID: 8300000, guid: 2c77de3f9a115234795cfce36d1ce520, type: 3}
+    volume: 0.807
+    pitch: 0.96
+    loop: 0
     source: {fileID: 0}
   updatesValues: 1

@@ -9,6 +9,8 @@ public class DiceScroller : MonoBehaviour
     public Sprite[] sprites;
     public int value;
 
+    public float soundQueue;
+
     float timer;
     Image image;
 
@@ -18,11 +20,21 @@ public class DiceScroller : MonoBehaviour
         value = Random.Range(0, 6);
         image.sprite = sprites[value];
         timer = 0;
+
+        soundQueue = 2f;
     }
     
     void Update()
     {
         transform.rotation = Quaternion.Euler(new Vector3(0,0, Mathf.Clamp((timer - (rollRate * 0.95f))*900, 0, 360)));
+
+        if (timer >= rollRate - soundQueue)
+        {
+            if (!FindObjectOfType<AudioManager>().FindSource("ExtendedDiceRoll").source.isPlaying)
+            {
+                FindObjectOfType<AudioManager>().Play("ExtendedDiceRoll");
+            }
+        }
 
         timer += Time.deltaTime;
         if(timer >= rollRate)
