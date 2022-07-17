@@ -33,8 +33,6 @@ public class HealthBar : MonoBehaviour
     {
         playerCurrentHealth = player.GetComponent<PlayerHealth>().currentHealth;
         GetComponent<Slider>().value = playerCurrentHealth;
-
-        Debug.Log(playerCurrentHealth);
     }
 
     String ConvertToBase(int numberToConvert, int baseToConvertTo)
