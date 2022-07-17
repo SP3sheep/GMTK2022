@@ -111,4 +111,10 @@ MonoBehaviour:
     pitch: 0.96
     loop: 0
     source: {fileID: 0}
+  - name: StreakPlonk
+    clip: {fileID: 8300000, guid: 1cda2aac1a273414a8c005c686eecce1, type: 3}
+    volume: 0.416
+    pitch: 0.75
+    loop: 0
+    source: {fileID: 0}
   updatesValues: 0

@@ -76,6 +76,13 @@ public class ScoreTracker : MonoBehaviour
             {
                 scoreForKill += 200;
             }
+
+            if (currentStreak > 2)
+            {
+                FindObjectOfType<AudioManager>().FindSource("StreakPlonk").source.pitch = Mathf.Min(1.5f, 0.70f + 0.1f * currentStreak);
+                FindObjectOfType<AudioManager>().Play("StreakPlonk");
+            }
+
         }
 
         timeSinceLastKill = 0;

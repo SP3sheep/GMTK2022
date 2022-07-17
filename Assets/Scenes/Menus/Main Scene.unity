@@ -1595,7 +1595,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2045354742384956149, guid: c17a76559c179544cb9551e5df9df7f9, type: 3}
       propertyPath: multiKillThreshold
-      value: 2
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c17a76559c179544cb9551e5df9df7f9, type: 3}
